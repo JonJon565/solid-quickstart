@@ -1,7 +1,24 @@
-// Update the URL to point to your PHP proxy script
-const serverURL = 'https://phpbloxdproxy.netlify.app/index.php?url=https://bloxd.io/index.html';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch HTML with PHP Proxy</title>
+</head>
+<body>
+    <div id="content"></div>
 
-fetch(serverURL)
-    .then(response => response.text())
-    .then(htmlContent => displayHTML(htmlContent))
-    .catch(error => console.error('Error fetching HTML:', error));
+    <script>
+        function displayHTML(htmlContent) {
+            document.getElementById('content').innerHTML = htmlContent;
+        }
+
+        const serverURL = 'https://phpbloxdproxy.netlify.app/index.php?url=https://bloxd.io/index.html';
+
+        fetch(serverURL)
+            .then(response => response.text())
+            .then(htmlContent => displayHTML(htmlContent))
+            .catch(error => console.error('Error fetching HTML:', error));
+    </script>
+</body>
+</html>
