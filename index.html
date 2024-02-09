@@ -1,32 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fetch HTML and Display</title>
-</head>
-<body>
-    <div id="content"></div>
+// Update the URL to point to your PHP proxy script
+const serverURL = 'https://your-server-url.com/proxy.php?url=https://bloxd.io/index.html';
 
-    <script>
-        // Function to fetch HTML content from a URL
-        function fetchHTML(url) {
-            return fetch(url)
-                .then(response => response.text());
-        }
-
-        // Function to display HTML content on the page
-        function displayHTML(htmlContent) {
-            document.getElementById('content').innerHTML = htmlContent;
-        }
-
-        // URL of the website you want to fetch
-        const websiteURL = 'https://example.com';
-
-        // Fetch the HTML content and display it on the page
-        fetchHTML(websiteURL)
-            .then(htmlContent => displayHTML(htmlContent))
-            .catch(error => console.error('Error fetching HTML:', error));
-    </script>
-</body>
-</html>
+fetch(serverURL)
+    .then(response => response.text())
+    .then(htmlContent => displayHTML(htmlContent))
+    .catch(error => console.error('Error fetching HTML:', error));
