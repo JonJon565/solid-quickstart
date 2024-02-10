@@ -5,22 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fetch Example.com HTML</title>
 </head>
+  yo wuzzup
 <body>
-  <script>
-    // Fetching example.com HTML
-    fetch('https://example.com')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.text();
-      })
-      .then(html => {
-        console.log(html);
-      })
-      .catch(error => {
-        console.error('There was a problem fetching the HTML:', error);
-      });
-  </script>
 </body>
 </html>
